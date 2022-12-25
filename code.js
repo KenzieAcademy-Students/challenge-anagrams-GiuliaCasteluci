@@ -1,14 +1,15 @@
-import { words } from "./words"
+let clickMeButton = document.getElementById("clickMeButton")
+let word = document.getElementById("search")
+let body = document.querySelector('body')
+let anagram = document.createElement('p')
 
-searchInput = document.querySelector("[data-search]")
-
-searchInput.addEventListener("input", (words) =>{
-    const value = e.target.value
-    console.log(value)
+clickMeButton.addEventListener('click', () => {
+    anagram.innerHTML = ""
+    anagram.innerText = anagrams(word.value)
+    body.appendChild(anagram)
 })
 
-
-function anagrams(words) {
-    return words.split("").reverse().join("");
-
+function anagrams(words){
+    return words.split("").reverse().join("")
 }
+
